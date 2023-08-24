@@ -12,6 +12,10 @@ void sub_func(stack_t **head, unsigned int counter);
 void div_func(stack_t **head, unsigned int counter);
 void mul_func(stack_t **head, unsigned int counter);
 void mod_func(stack_t **head, unsigned int counter);
+void pchar_func(stack_t **head, unsigned int counter);
+void pstr_func(stack_t **head, unsigned int counter);
+void rotl_func(stack_t **head,  __attribute__((unused)) unsigned int counter);
+void rotr_func(stack_t **head, __attribute__((unused)) unsigned int counter);
 
 
 #endif
