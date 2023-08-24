@@ -3,6 +3,6 @@
 
 void push_func(stack_t **head, unsigned int counter);
 void f_pall(stack_t **head, unsigned int counter);
-
+void pint_func(stack_t **head, unsigned int counter);
 
 #endif
