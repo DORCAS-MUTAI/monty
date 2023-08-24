@@ -16,6 +16,9 @@ void pchar_func(stack_t **head, unsigned int counter);
 void pstr_func(stack_t **head, unsigned int counter);
 void rotl_func(stack_t **head,  __attribute__((unused)) unsigned int counter);
 void rotr_func(stack_t **head, __attribute__((unused)) unsigned int counter);
+void stack_func(stack_t **head, unsigned int counter);
+void queue_func(stack_t **head, unsigned int counter);
+void add_queue(stack_t **head, int n);
 
 
 #endif
