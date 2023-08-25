@@ -3,6 +3,7 @@
  * add_func - adds the top two elements of the stack.
  * @head: stack head
  * @counter: line_number
+ * free_stack - frees stack
  * Return: no return
 */
 void add_func(stack_t **head, unsigned int counter)

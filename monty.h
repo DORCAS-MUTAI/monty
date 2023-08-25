@@ -1,7 +1,7 @@
 #ifndef MONTY_H
 #define MONTY_H
-
 #include <stdio.h>
+#define  _POSIX_C_SOURCE 200809L
 #include <stdlib.h>
 #include <sys/types.h>
 #include <unistd.h>
@@ -52,14 +52,17 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
-void push_func(stack_t **head, unsigned int counter);
-void pall_func(stack_t **head, unsigned int counter);
-void pint_func(stack_t **head, unsigned int counter);
+char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
+ssize_t getstdin(char **lineptr, int file);
+char  *clean_line(char *content);
+void push_func(stack_t **head, unsigned int number);
+void pall_func(stack_t **head, unsigned int number);
+void pint_func(stack_t **head, unsigned int number);
+int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
+void free_stack(stack_t *head);
 void pop_func(stack_t **head, unsigned int counter);
 void swap_func(stack_t **head, unsigned int counter);
 void add_func(stack_t **head, unsigned int counter);
-void add_node(stack_t **head, int n);
 void nop_func(stack_t **head, unsigned int counter);
 void sub_func(stack_t **head, unsigned int counter);
 void div_func(stack_t **head, unsigned int counter);
@@ -67,12 +70,10 @@ void mul_func(stack_t **head, unsigned int counter);
 void mod_func(stack_t **head, unsigned int counter);
 void pchar_func(stack_t **head, unsigned int counter);
 void pstr_func(stack_t **head, unsigned int counter);
-void rotl_func(stack_t **head,  __attribute__((unused)) unsigned int counter);
+void rotl_func(stack_t **head, unsigned int counter);
 void rotr_func(stack_t **head, __attribute__((unused)) unsigned int counter);
-void stack_func(stack_t **head, unsigned int counter);
-void queue_func(stack_t **head, unsigned int counter);
+void add_node(stack_t **head, int n);
 void add_queue(stack_t **head, int n);
-int execute(char *content, stack_t **stack, unsigned int counter, FILE *file);
-
-
+void queue_func(stack_t **head, unsigned int counter);
+void stack_func(stack_t **head, unsigned int counter);
 #endif
